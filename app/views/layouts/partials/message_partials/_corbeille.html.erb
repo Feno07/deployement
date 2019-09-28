@@ -1,0 +1,27 @@
+<div class="admin-reception-envoi-corbeille-container corbeille">
+	<% @message_trash.each do |message| %>
+		<div class="admin-reception-envoi-corbeille-item-container">
+			<a href="" class="aherf-admin-message">
+				<div class="admin-admin-reception-envoi-corbeille-icon">
+					<%= fa_icon 'envelope' %>
+				</div>
+				<div class="admin-reception-envoi-corbeille-content">
+					<div class="admin-reception-envoi-corbeille-who">
+						<
+						<p>by: <%=message.user.username%></p>
+					</div>
+					<div class="admin-reception-envoi-corbeille-content-content">
+						<p><%=message.content%></p>
+					</div>
+				</div>
+				<div class="admin-reception-envoi-corbeille-date">
+					<p><%=message.date.to_s%></p>
+				</div>
+			</a>
+			<div class="admin-reception-envoi-corbeille-trash">
+				<a href=""><%= fa_icon "trash"%></a>
+			</div>
+		</div>
+
+	<% end %>
+</div>

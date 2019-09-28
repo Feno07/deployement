@@ -1,0 +1,25 @@
+<div class="login-container">
+	<section class="login-head">
+		<div class="login-head-logo">
+			<p>Bienvenue sur</p>
+			<p>#TheSocialRace</p>
+		</div>
+	</section>
+	<section class="login-login">	
+		<div class="login-button">
+			<div class="button-facebook">
+				<%= link_to 'auth/facebook', class: 'fa fa-facebook' do %><span> &nbsp Login Facebook</span><% end %>
+			</div>
+			<div class="button-instagram">
+				<a href=""><%= fa_icon "instagram" %> Login instagram</a>
+			</div>
+		</div>
+	</section>
+	<section class="login-footer">
+		<div class="login-footer-avatar">
+			<div class="login-footer-avatar-container">
+				<%= fa_icon "user-o" %>
+			</div>
+		</div>
+	</section>
+</div>

@@ -1,0 +1,16 @@
+<%= render 'layouts/partials/header',	title: url_for()[10..url_for().length - 1] %>
+<div class="admin-message-container">
+	<nav class="admin-message-nav">
+		<ul class="admin-message-list-nav">
+			<li class="item-nav item-active"><p>receptions</p></li>
+			<li class="item-nav"><p>envoyes</p> </li>
+			<li class="item-nav"><p>corbeille</p></li>
+		</ul>
+	</nav>
+	<div class="admin-message-list">
+		<%= render 'layouts/partials/message_partials/reception' %>
+		<%= render 'layouts/partials/message_partials/envoyes' %>
+		<%= render 'layouts/partials/message_partials/corbeille' %>
+	</div>
+</div>
+<%= render 'layouts/partials/footer',current: '' %>

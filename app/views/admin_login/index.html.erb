@@ -1,0 +1,29 @@
+<div class="admin-login-container">
+	<div class="admin-login-content">
+		<section class="admin-login">
+			<div class="admin-login-logo-container">
+				<p>#TheSocialRace</p>
+			</div>
+			<div class="admin-login-alert">
+				<% if flash[:danger] %>
+					<div class="danger"><%= flash[:danger] %></div>
+				<% end %>
+			</div>
+			<div class="admin-login-form-container">
+				<%= form_with url: admin_login_path, method: "post", class:"admin-login-form" do %>
+					<div class="login-admin-username">
+						<%= fa_icon "user-o" %>
+				   		<%= text_field_tag :username,nil, placeholder: 'Username'%>
+					</div>
+					<div class="login-admin-password">
+						<%= fa_icon "unlock-alt" %>
+				   		<%= password_field_tag :password ,nil, placeholder: 'Password'%>
+					</div>
+					<div class="login-admin-button">
+						<%= submit_tag("Login") %>
+					</div>
+				<% end %>
+			</div>
+		</section>
+	</div>
+</div>

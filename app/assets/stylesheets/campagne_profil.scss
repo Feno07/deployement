@@ -1,0 +1,167 @@
+// Place all the styles related to the campagne_profil controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.campagne-profil-container{
+	position: relative;
+	height: 80%;
+	@media screen and (max-height: 388px){
+		overflow-y: scroll;
+	}
+	.campagne-profil-first-section{
+		display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    height: 25%;
+	    .campagne-profil-photo{
+	    	width: 114px;
+		    height: 114px;
+		    border-radius: 10px;
+		    overflow: hidden;
+		    margin-right:  6%;
+		    @media screen and (max-height: 575px){
+				width: 90px;
+		    	height: 90px;
+			}
+		    img{
+		    	width: 100%;
+		    }
+	    }
+
+	    .campagne-profil-identity{
+	    	p{
+	    		padding: 5px 0;
+	    		&:first-child{
+	    			font-weight:bold;
+	    		}
+	    		&:nth-child(2){
+	    			padding: 2px 0;
+	    		}
+	    		&:nth-child(3){
+	    			color: #bdb9b9;
+	    			font-size: 0.8em;
+	    		}
+	    		&:nth-child(4){
+	    			color: #bdb9b9;
+	    			font-size: 0.8em;
+	    		}
+	    		@media screen and (max-width: 449px){
+	    			&:first-child{
+		    			font-size: 0.8em;
+		    		}
+		    		&:nth-child(2){
+		    			font-size: 0.8em;
+		    		}
+		    		&:nth-child(3){
+		    			font-size: 0.8em;
+		    		}
+		    		&:nth-child(4){
+		    			font-size: 0.8em;
+		    		}
+	    		}
+	    	}
+
+	    }
+	}
+	.campagne-profil-second-section{
+		display: flex;
+	    justify-content: space-around;
+	    align-items: center;
+	    height: 15%;
+	    div{
+	    	display: flex;
+	    	align-items: center;
+	    	justify-content: center;
+	    	flex-direction: column;
+	    	p{
+	    		color: #303030;
+	    		font-weight: bold;
+	    		font-size: 0.9em;
+	    	}
+	    }
+	}
+	.campagne-profil-third-section{
+	    height: 38%;
+	    position: relative;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    justify-content: center;
+		p{
+			text-align: center;
+		    margin-bottom: 10px;
+		    font-weight: bold;
+		    color: #a7a7a7;
+		}
+		.campagne-profil-campagne-container{
+			width:  100%;
+			.campagne-profil-owl {
+				height: 100%;
+				div{
+					position: relative;
+					width: 80%;
+				    margin: 0 auto;
+				    .owl-item{
+				    	@media screen and (min-width: 562px){
+				    		width: 131px!important;
+				    	}
+				    	@media screen and (max-height:440px){
+				    		width: 100px!important;
+				    	}
+				    	.item{
+				    		overflow: hidden;
+				    		border-radius: 10px;
+				    		img{
+				    			width: 100%;
+				    		}
+				    	}
+				    }
+				}
+				.campagne-profil-like{
+					height: auto;
+				    position: absolute;
+				    z-index: 2;
+				    top: 0;
+				    display: flex;
+				    bottom: 0;
+				    align-items: flex-end;
+				    p{
+				    	margin-left: 10px;
+				    	margin-bottom: 5px;
+				    	&:first-child{
+				    		color: #f51a1a;
+				    	}
+
+				    	&:nth-child(2){
+				    		color: #fff;
+				    		font-size: 0.8em;
+				    	}
+				    }
+				}
+			}
+		}
+	}
+	hr{
+		width: 200px;
+	}
+
+	.campagne-profil-fourth-section{
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@media screen and (max-height: 504px){
+			bottom: 0px;
+		}
+		p{
+			margin:10px 0;
+			font-size: 29px;
+			width: 50px;
+			@media screen and (max-height: 504px){
+				font-size: 1em;
+			}
+	 	}
+	}
+}

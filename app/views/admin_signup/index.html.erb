@@ -1,0 +1,34 @@
+<div class="admin-signup-container">
+	<div class="admin-signup-content">
+		<section class="admin-signup">
+			<div class="admin-signup-logo-container">
+				<p>#TheSocialRace</p>
+			</div>
+			<div class="admin-signup-alert">
+				<% if flash[:danger] %>
+					<div class="danger"><%= flash[:danger] %></div>
+				<% end %>
+			</div>
+			<div class="admin-signup-form-container">
+				<%= form_with url: admin_signup_verification_path, method: "post", class:"admin-signup-form" do %>
+					<div class="signup-admin-username">
+						<%= fa_icon "user-o" %>
+				   		<%= text_field_tag :username,nil, placeholder: 'Username'%>
+					</div>
+					<div class="signup-admin-password">
+						<%= fa_icon "unlock-alt" %>
+				   		<%= password_field_tag :password ,nil, placeholder: 'Password'%>
+					</div>
+					<div class="signup-admin-password">
+						<%= fa_icon "unlock-alt" %>
+				   		<%= password_field_tag :password_confirm ,nil, placeholder: 'Confirm password'%>
+					</div>
+					<div class="signup-admin-button">
+						<%= submit_tag("signup") %>
+					</div>
+				<% end %>
+			</div>
+		</section>
+	</div>
+</div>
+

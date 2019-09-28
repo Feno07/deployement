@@ -1,0 +1,65 @@
+<%= render 'layouts/partials/header',	title: url_for()[10..url_for().length - 3] %>
+<div class="campagne-poster-container">
+	<% @campagne.each do |campagne|%>
+		<%= form_with url:campagne_post_path, method:'post' do %>
+			<div class="campagne-poster-header">
+				<p><%= campagne.entreprise.pays %><span><%= image_tag '/flag/'+campagne.entreprise.pays+'.png', alt: 'logo'%></span></p>
+				<div class="campagne-poster-image-brief-container">
+					<div class="campagne-poster-image">
+						<img src="<%= campagne.image_post_url%>" alt="image">
+					</div>
+					<div class="campagne-poster-brief">
+						<p>Brief de la campagne à poster:</p>
+						<p><%= campagne.brief%></p>
+					</div>
+				</div>
+				<div class="campagne-poster-socialNetwork">
+
+					<div class="social-network-left">
+						<p>
+							<%= radio_button_tag :provider, 'instagram' %>
+							<%= label_tag :instagram do %><span><%= fa_icon 'instagram' %></span>Instagram<% end %>
+						</p>
+						<p>
+							<%= radio_button_tag :provider, 'tiktok' %>
+							<%= label_tag :Tik_tok do %><span><%= fa_icon 'instagram' %></span>tik Tok<% end %>
+						</p>
+						<p>
+							<%= radio_button_tag :provider, 'linkedin' %>
+							<%= label_tag :linkedin do %><span><%= fa_icon 'linkedin-square' %></span>Linkedin<% end %>
+						</p>
+					</div>
+					<div class="social-network-right">
+						<p>
+							<%= radio_button_tag :provider, 'facebook' %>
+							<%= label_tag :facebook do %><span><%= fa_icon 'facebook' %></span>Linkedin<% end %>
+						</p>
+						<p>
+							<%= radio_button_tag :provider, 'pinterest' %>
+							<%= label_tag :pinterest do %><span><%= fa_icon 'pinterest' %></span>Pinterest<% end %>
+						</p>
+						<p>
+							<%= radio_button_tag :provider, 'twitter' %>
+							<%= label_tag :twitter do %><span><%= fa_icon 'twitter' %></span>twitter<% end %>
+						</p>
+						
+					</div>
+				</div>
+				<div class="campage-poster-button">
+					<div class="button-first">
+							<%= hidden_field_tag :image_url,campagne.image_post_url%>
+							<%= hidden_field_tag :title, campagne.titre%>
+							<%= hidden_field_tag :brief, campagne.brief%>
+							<%= hidden_field_tag :id, campagne.id%>
+							<%=submit_tag "Poster" %>
+						
+					</div>
+					<div class="button-second">
+						<a href="<%= campagne_participer_path(id:campagne.id)%>">Retour</a>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+<%= render 'layouts/partials/footer',current: '' %>

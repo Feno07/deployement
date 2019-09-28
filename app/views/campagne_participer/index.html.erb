@@ -1,0 +1,71 @@
+<%= render 'layouts/partials/header',	title: url_for()[10..url_for().length - 3] %>
+<div class="campagne-participer-container">
+	<% @campagne.each do |campagne|%>
+	<div class="campagne-participer-content">
+		<div class="campagne-participer-header">
+			<p><%= campagne.entreprise.pays %><span><%= image_tag '/flag/'+campagne.entreprise.pays+'.png', alt: 'logo'%></span></p>
+		</div>
+		<div class="campagne-participer-section-first">
+			<p>Post type (modifiable)<span type="button" data-toggle="modal" data-target="#exampleModalLong"><%= fa_icon 'pencil'%></span></p>
+			<p><%=campagne.brief %></p>
+		</div>
+		<hr class="separateur">
+		<div class="campagne-participer-section-second">
+			<p>Photo proposées (Veuillez en séléctionner une ou en rajouter s'il vous voulez)</p>
+			<div class="section-second-photo-container">
+				<% campagne.images.each do |image| %>
+				<div class="photo-item">
+					<%= cl_image_tag image.name, alt:'image'%>
+					<div class="image-checked">
+						<%= fa_icon 'check' %>
+					</div>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<div class="campagne-participer-boutton-container">
+		<div class="campagne-participer-boutton-post">
+			<%=form_with url:campagne_poster_post_path,method:'post' do %>
+				<div class="post-input">
+					<%= hidden_field_tag :id,campagne.id%>
+					<%= hidden_field_tag :image_url%>
+				</div>
+				<%= button_tag(type:'submit') do %>
+					<%= fa_icon 'check'%>
+				<% end %>
+			<% end %>
+		</div>
+		<div class="campagne-participer-boutton-photos">
+			<!-- <input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="image_id" 
+   			data-form-data="[upload-preset-and-other-upload-options-as-html-escaped-JSON-data]"></input>
+   			<div class="progress_bar" style='background-color: red, height: 20px'>
+    		<div class='thumbnails'></div> -->
+		</div>
+	</div>
+
+	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Editer</h5>
+				</div>
+				<div class="modal-body">
+					<%=form_with url:campagne_brief_edit_path,method:'post' do %>
+					<div class="modal-textarea">
+						<%= hidden_field_tag :id,campagne.id%>
+						<%= text_area_tag :brief_campagne,campagne.brief %>
+					</div>
+						<%= submit_tag("Enregistrer") %>
+					<% end %>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
+<%= render 'layouts/partials/footer',current: '' %>

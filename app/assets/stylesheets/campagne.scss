@@ -1,0 +1,139 @@
+// Place all the styles related to the campagne controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.campagne-container{
+	height: 80%;
+	.campagne-header{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 10%;
+		box-shadow: 0 8px 11px #f5eeee;
+		.campagne-tri-container{
+			position: relative;
+			margin-left: 20px;
+			.campagne-tri{
+				cursor: pointer;
+				font-size: 1em;
+				@media screen and(min-width: 320px) and (max-width: 420px){
+					font-size: 0.9em;
+				}
+				p{
+					color: #303030;
+				}
+			}
+			.campagne-tri-item{
+				display: none;
+				position: absolute;
+				background: #d05454;
+				width: 300px;
+				box-shadow: 0 8px 11px #9a9a9a;
+				@media screen and(min-width: 320px) and (max-width: 420px){
+					width: 270px;
+				}
+				p{
+					padding:10px 20px;
+					font-size: 1em;
+					@media screen and(min-width: 320px) and (max-width: 420px){
+						font-size: 0.9em;
+					}
+					a{
+						color: #fff;
+						text-decoration: none;
+						span{
+							margin-right: 10px;
+						}
+					}
+					&:hover{
+						background-color: #303030;
+					}
+				}
+			}
+		}
+
+		.campagne-logout{
+			margin-right: 20px;
+			p{
+				a{
+					color: #303030;
+					text-decoration: none;
+					@media screen and(min-width: 320px) and (max-width: 420px){
+						font-size: 0.9em;
+					}
+				}
+			}
+		}
+	}
+
+	.campagne-item-container{
+		height: 90%;
+		overflow: scroll;
+		a{
+			text-decoration: none;
+			.campagne-item-section{
+				display: flex;
+				flex-direction: row;
+				border-radius: 5px;
+				box-shadow: 0 8px 11px #f5eeee;
+				width: 90%;
+				margin:15px auto;
+				height: 14%;
+				border-radius: 5px;
+				overflow: hidden;
+				&:hover{
+					box-shadow: 0 8px 11px #7d7a7a;
+				}
+				.campagne-item{
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					&:first-child{
+						width: 15%;
+						overflow: hidden;
+						justify-content: flex-start;
+						img{
+							width: 80px;
+						}
+					}
+					&:nth-child(2){
+						width: 60%;
+						p{
+							margin-bottom: 3px;
+							color: #303030;
+							&:first-child{
+								@media screen and (min-width:320px) and (max-width: 500px){
+									font-size: 0.8em;
+								}
+							}
+							&:nth-child(2){
+								font-size: 0.8em;
+								color: #a59b9b;
+								@media screen and (min-width:320px) and (max-width: 500px){
+									font-size: 0.7em;
+								}
+							}
+
+							&:nth-child(3){
+								font-size: 0.8em;
+								font-style: italic;
+								@media screen and (min-width:320px) and (max-width: 500px){
+									font-size: 0.7em;
+								}
+							}
+						}
+					}
+					&:nth-child(3){
+						width: 25%;
+						background: #303030;
+						color: #fff;
+						border-radius: 0;
+						@media screen and (min-width:320px) and (max-width: 500px){
+							font-size: 0.7em;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,97 @@
+<div class="admin-reception-envoi-corbeille-container receptions section-active">
+	<% if defined?(@message_get)%>
+		<% @message_get.each do |message| %>
+		<div class="admin-reception-envoi-corbeille-item-container">
+			<a href="<%=admin_message_selected_path(id:message.id)%>" class="aherf-admin-message">
+				<div class="admin-admin-reception-envoi-corbeille-icon">
+					<%= fa_icon 'envelope' %>
+				</div>
+				<div class="admin-reception-envoi-corbeille-content">
+					<div class="admin-reception-envoi-corbeille-who">
+						<p>by: <%=message.user.username%></p>
+					</div>
+					<div class="admin-reception-envoi-corbeille-content-content">
+						<p><%=message.content%></p>
+					</div>
+				</div>
+				<div class="admin-reception-envoi-corbeille-date">
+					<p><%=message.date.strftime("%d %b, %H:%M%p") %></p>
+				</div>
+			</a>
+			<div class="admin-reception-envoi-corbeille-trash">
+				<a href="<%=admin_message_trash_path(id:message.id)%>"><%= fa_icon "trash"%></a>
+			</div>
+		</div>
+		<% end %>
+		<div class="admin-send-message-container">
+			<%= form_with url: admin_send_message_path, method: "post", class:"admin-signup-form" do %>
+			<div class="admin-send-message-form-container">
+				<div class="admin-send-message-whom">
+					<%= fa_icon "user" %>
+					<%= select_tag(:select_user, options_from_collection_for_select(@user, "id", "username")) %>
+				</div>
+				<div class="admin-send-message-message">
+					<%= text_area_tag :message ,nil, placeholder: 'Ecris ton message!!'%>
+				</div>
+				<div class="signup-admin-button">
+					<%= submit_tag("Envoyer") %>
+				</div>
+				<div class="admin-send-exit">
+					<%= fa_icon 'times-circle-o ' %>
+				</div>
+			</div>
+			<% end %>
+		</div>
+
+	<% else%>
+
+	<% @message_get_campagne.each do |message| %>
+		<div class="admin-reception-envoi-corbeille-item-container">
+			<a href="<%=campagne_message_selected_path(id:message.id)%>" class="aherf-admin-message">
+				<div class="admin-admin-reception-envoi-corbeille-icon">
+					<%= fa_icon 'envelope' %>
+				</div>
+				<div class="admin-reception-envoi-corbeille-content">
+					<div class="admin-reception-envoi-corbeille-who">
+						<p>by:Administrateur</p>
+					</div>
+					<div class="admin-reception-envoi-corbeille-content-content">
+						<p><%=message.content%></p>
+					</div>
+				</div>
+				<div class="admin-reception-envoi-corbeille-date">
+					<p><%=message.date.strftime("%d %b, %H:%M%p") %></p>
+				</div>
+			</a>
+			<div class="admin-reception-envoi-corbeille-trash">
+				<a href="<%=campagne_message_trash_path(id:message.id)%>"><%= fa_icon "trash"%></a>
+			</div>
+		</div>
+	<% end %>
+
+
+	<div class="admin-send-message-container">
+		<%= form_with url: campagne_messages_send_path, method: "post", class:"admin-signup-form" do %>
+			<div class="admin-send-message-form-container">
+				<div class="admin-send-message-whom">
+					<%= fa_icon "user" %>
+				</div>
+				<div class="admin-send-message-message">
+					<%= text_area_tag :message ,nil, placeholder: 'Ecris ton message!!'%>
+				</div>
+				<div class="signup-admin-button">
+					<%= submit_tag("Envoyer") %>
+				</div>
+				<div class="admin-send-exit">
+					<%= fa_icon 'times-circle-o'%>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<% end %>
+</div>
+<div class="admin-message-icon-send-container">
+	<div class="admin-write-message-container">
+		<%= fa_icon 'pencil-square' %>
+	</div>
+</div>

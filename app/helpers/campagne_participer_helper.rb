@@ -1,0 +1,2 @@
+module CampagneParticiperHelper
+end

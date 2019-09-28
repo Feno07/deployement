@@ -1,0 +1,14 @@
+<div class="admin-add-campagne-responsable-input-container">
+	<div class="admin-add-campagne-responsable-input-item">
+		<%= label_tag(:responsable_name, "Nom du responsable") %>
+  		<%= text_field_tag(:responsable_name) %>
+	</div>
+	<div class="admin-add-campagne-responsable-input-item">
+		<%= label_tag(:email_responsable, "Mail du responsalbe") %>
+  		<%= email_field(:responsable, :mail) %>
+	</div>
+	<div class="admin-add-campagne-responsable-input-item">
+		<%= label_tag(:telephone, "Téléphone du responsable") %>
+  		<%= telephone_field(:responsable,:phone) %>
+	</div>
+</div>

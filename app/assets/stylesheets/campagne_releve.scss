@@ -1,0 +1,186 @@
+// Place all the styles related to the campagne_releve controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.campagne-releve-container{
+	height: 81%;
+	 @media screen and (max-height: 661px){
+	   overflow-y: scroll;
+	}
+	.campagne-releve-section-first{
+		padding: 10px 0;
+		.campagne-releve-owl {
+			height: 100%;
+			box-shadow: 0 5px 9Px #b7b7b7;
+			div{
+				position: relative;
+				width: 80%;
+				margin: 0 auto;
+				.owl-item{
+					@media screen and (min-width: 562px){
+						width: 131px!important;
+					}
+					@media screen and (max-height:440px){
+						width: 100px!important;
+					}
+					.item{
+						border-radius: 10px;
+						a{
+							display: inline-block;
+							position: relative;
+							pointer-events: none;
+							img{
+								width: 100%;
+								border-radius: 5px;
+							}
+							.like-container{
+								height: auto;
+								position: absolute;
+								z-index: 2;
+								top: 0;
+								display: flex;
+								bottom: 0;
+								flex-direction: column;
+								justify-content: flex-end;
+								width: 100%;
+								.like-number{
+									display: flex;
+									p{
+										&:first-child{
+											color: #f51a1a;
+										}
+
+										&:nth-child(2){
+											color: #fff;
+											margin-left:5px;
+											font-size: 0.8em;
+											text-shadow: 1px 2px 3px #000;
+										}
+									}
+								}
+							}
+						}
+						.pays{
+							text-align: center;
+							color: #c5c5c5;
+							padding: 2px 0;
+							font-size: 0.8em;
+						}
+					}
+				}
+			}
+
+		}
+	}
+	.campagne-releve-section-second{
+		display: none;
+		margin: 0 auto;
+	    width: 320px;
+	    padding: 10px 0;
+	    box-shadow: 0px 4px 8px #a9a9a9;
+    	border-radius: 5px;
+		.campagne-releve-section-second-first{
+			    display: flex;
+			    justify-content: center;
+			    margin: 0 auto;
+			.section-image{
+				width: 150px;
+    			height: 150px;
+    			padding: 0 10px;
+				img{
+					width: 100%;
+					border-radius: 10px;
+				}
+			}
+			.section-description{
+
+				p{
+					font-size: 0.9em;
+					margin-bottom: 5px;
+					&:first-child{
+						color: #adadad;
+					}
+
+					&:nth-child(2){
+						font-size: 1em;
+						color: #303030;
+						span{
+							width: 10px;
+							height: 10px;
+							display: inline-block;
+							img{
+								width: 100%;
+							}
+						}
+					}
+					&:nth-child(3){
+						color: #adadad;
+					}
+					&:nth-child(4){
+						color: #303030;
+						span{
+							margin-right: 5px;
+							color: #34ab45;
+						}
+					}
+					&:nth-child(5){
+						span{
+							width: 20px;
+							display: inline-block;
+						}
+					}
+					&:nth-child(6){
+						color: #adadad;
+					}
+				}
+			}
+		}
+
+		.campagne-releve-secion-second-second{
+			margin:20px 0;
+			p{
+				color: #adadad;
+				text-transform: uppercase;
+				margin-left: 20px;
+			}
+			.social-network-container{
+				display: flex;
+			    justify-content: space-around;
+			    width: 50%;
+			    margin: 20px auto;
+			    div{
+			    	p{
+			    		color: #303030;
+			    		text-align: center;
+			    		&:first-child{
+			    			font-size:2em;
+			    		}
+			    		&:nth-child(2){
+			    			font-size: 0.8em;
+			    			color: #adadad;
+			    		}
+			    	}
+			    }
+			}
+		}
+		.campagne-releve-section-second-thrird{
+			p{
+				font-size: 1.5em;
+				font-weight: bold;
+				text-align: center;
+			}
+		}
+	}
+	.campagne-releve-section-third{
+		height: 15%;
+	    display: flex;
+	    align-items: center;
+	    justify-content: flex-end;
+	    p{
+	    	padding: 10px 40px ;
+	    	background-color: #303030;
+	    	margin-right: 20px;
+	    	color: #fff;
+	    	border-radius: 5px;
+	    }
+	}
+}

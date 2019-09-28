@@ -1,0 +1,88 @@
+// Place all the styles related to the admin_login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-login-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	.admin-login{
+		background-image: linear-gradient(to bottom right, #2f2e2e, #7d949a);
+	    height: 300px;
+	    width: 320px;
+	    display: flex;
+	    align-items: center;
+	    flex-direction: column;
+	    justify-content: center;
+	    box-shadow: 1px 1px 9px #585858;
+	    .admin-login-logo-container{
+	    	margin-bottom: 59px;
+	    	p{
+	    		color: #fff;
+			    font-size: 1.4em;
+			    font-weight: bold;
+	    	}
+	    }
+
+	    .admin-login-alert{
+	    	.danger{
+	    		color: #fff;
+	    		font-size: 0.7em;
+	    		color: #fff;
+			    font-size: 0.7em;
+			    background: #ec8787;
+			    padding: 5px;
+			    margin-bottom: 3px;
+	    	}
+	    }
+
+	    .admin-login-form-container{
+	    	div{
+	    		position: relative;
+	    		i{
+	    			color: #fff;
+	    			position:absolute;
+	    		}
+	    		input[type="text"],input[type='password']{
+	    			background-color: transparent;
+				    border: none;
+				    border-bottom: solid 1px #fff;
+				    padding-bottom: 5px;
+				    width: 200px;
+				    margin-bottom: 20px;
+				    padding-left: 20px;
+				    color: #fff;
+				    outline: none;
+				    font-weight: bold;
+				    &:hover{
+				    	border-bottom: solid 3px #fff;
+				    }
+				    &::placeholder {
+					  color: #fff;
+					}
+
+					&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+					 	color: #fff;
+					}
+
+					&::-ms-input-placeholder { /* Microsoft Edge */
+					 color: #fff;
+					}
+				    &:hover{
+				    	border-bottom: solid 3px #fff;
+				    }
+	    		}
+	    		input[type="submit"]{
+	    			background: #fff;
+				    border: none;
+				    padding: 7px 15px;
+				    font-weight: bold;
+				    color: #303030;
+				    border-radius: 4px;
+	    		}
+	    	}
+	    }
+	}
+}

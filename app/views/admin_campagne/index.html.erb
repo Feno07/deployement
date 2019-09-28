@@ -1,0 +1,78 @@
+<%= render 'layouts/partials/header',	title: url_for()[7..url_for().length] %>
+<div class="admin-campagne-container">
+	<div class="admin-campagne-menu-head-container">
+		<div class="admin-campagne-option-container">
+			<div class="admin-campagne-option">
+				<p disabled=true><span><%= fa_icon "chevron-circle-down "%></span>option</p>
+			</div>
+			<div class="admin-campagne-option-item">
+				<div class="admin-campagne-option-edit">
+					<p><a href=""><span><%= fa_icon 'pencil-square '%></span>Editer</a></p>
+				</div>
+				<div class="admin-campagne-option-delete">
+					<p><a href=""><span><%= fa_icon 'trash-o'%></span>Supprimer</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="admin-campagne-add-container">
+			<p><a href="<%=admin_add_campagne_path%>"><span><%= fa_icon 'plus-square'%></span>Ajouter</a></p>
+		</div>
+	</div>
+
+	<div class="admin-campagne-table-container">
+		<div class="admin-campagne-table">
+			<div class="admin-campagne-table-row-header">
+				<div class="admin-campagne-table-cell">
+					<p>check</p>
+				</div>
+				<div class="admin-campagne-table-cell">
+					<p>Titre</p>
+				</div>
+				<div class="admin-campagne-table-cell">
+					<p>Début</p>
+				</div>
+				<div class="admin-campagne-table-cell">
+					<p>Compagne Cumulabe</p>
+				</div>
+				<div class="admin-campagne-table-cell">
+					<p>type</p>
+				</div>
+				<div class="admin-campagne-table-cell">
+					<p>Budget</p>
+				</div>
+				<div class="admin-campagne-table-cell">
+					<p>Statut</p>
+				</div>
+			</div>
+			<div class="admin-campagne-table-row-container">
+				<% @campagne_list.each do |campagne|%>
+					<div class="admin-campagne-table-row-content">
+						<div class="admin-campagne-table-cell">
+							<p><input type="checkbox" name="chk[]" value="<%=campagne.id%>" class="checkBoxChecked"></p>
+						</div>
+						<div class="admin-campagne-table-cell">
+							<p><%=campagne.titre%></p>
+						</div>
+						<div class="admin-campagne-table-cell">
+							<p><%=campagne.date_debut%></p>
+						</div>
+						<div class="admin-campagne-table-cell">
+							<p>Oui</p>
+						</div>
+						<div class="admin-campagne-table-cell">
+							<p><%=campagne.type_campagne%></p>
+						</div>
+						<div class="admin-campagne-table-cell">
+							<p>5000</p>
+						</div>
+						<div class="admin-campagne-table-cell">
+							<p>terminé</p>
+						</div>
+					</div>
+				<%end%>
+			</div>
+		</div>
+	</div>
+</div>
+<%= render 'layouts/partials/footer' %>

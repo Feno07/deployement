@@ -1,0 +1,30 @@
+// Place all the styles related to the message_admin_selected controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-message-selected-container{
+	height: 74.6%;
+	padding: 20px;
+	.admin-message-selected-header-container{
+		padding: 20px;
+		.admin-message-selected-header{
+			p{
+				margin: 10px 0;
+			    text-transform: uppercase;
+			    font-style: italic;
+			    color: #a3a3a5;
+			    span{
+			    	text-transform: capitalize;
+			    	color: #303030;
+			    	font-weight: bold;
+			    }
+			}
+		}
+	}
+	.admin-message-selected-content{
+		p{
+			color: #303030;
+    		font-style: italic;
+		}
+	}
+}

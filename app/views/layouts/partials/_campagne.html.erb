@@ -1,0 +1,34 @@
+<div class="admin-add-campagne-campagne-input-container">
+	<div class="admin-add-campagne-campagne-input-item">
+		<%= label_tag(:titre_campagne, "Titre de la campagne") %>
+  		<%= text_field_tag(:titre_campagne) %>
+	</div>
+	<div class="admin-add-campagne-campagne-input-item">
+		<%= label_tag(:brief_campagne, "Brief *(objectif de la campagne) ") %>
+  		<%= text_area_tag(:brief_campagne) %>
+	</div>
+	<div class="admin-add-campagne-campagne-input-item">
+		<%= label_tag(:start_date, "Date de debut") %>
+  		<%= date_field(:start_date, :start_date) %>
+	</div>
+	<div class="admin-add-campagne-campagne-input-item">
+		<%= label_tag(:logo, "Logo pour la campagne") %>
+  		<%= file_field_tag :logo %>
+	</div>
+	<div class="admin-add-campagne-campagne-input-item">
+		<%= label_tag(:image_campagne, "Video de 5s ou image pour la campagne") %>
+  		<%= file_field_tag :image_campagne,multiple: true,name:'image_campagne[]' %>
+	</div>
+	<div class="admin-add-campagne-campagne-input-item input-exceptional">
+		<div class="input-exceptional-radio-1">
+			<%= radio_button_tag(:type_campagne, "reach",checked: true) %>
+			<%= label_tag(:type_campagne, "Mon objectif est d’obtenir le plus de 'reach'") %>
+		</div>
+		<div class="input-exceptional-radio-2">
+			<%= radio_button_tag(:type_campagne, "traffic") %>
+			<%= label_tag(:type_campagne, "Mon objectif est d’obtenir le plus de « traffic » sur un lien spécifique") %>
+		</div>
+		<br/>
+	</div>
+
+</div>

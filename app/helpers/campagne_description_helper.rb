@@ -1,0 +1,2 @@
+module CampagneDescriptionHelper
+end

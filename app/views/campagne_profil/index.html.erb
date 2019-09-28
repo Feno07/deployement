@@ -1,0 +1,55 @@
+<%= render 'layouts/partials/header',	title: url_for()[10..url_for().length] %>
+<div class="campagne-profil-container">
+	<% @profil.each do |profil|%>
+		<div class="campagne-profil-first-section">
+			<div class="campagne-profil-photo">
+				<img src="<%=profil.photo%>">
+			</div>
+			<div class="campagne-profil-identity">
+				<p><%= profil.username %></p>
+				<p><%= profil.status%></p>
+				<p><%= profil.email %></p>
+				<p>Membre depuis: <%= profil.date_membre.strftime('%Y')%></p>
+			</div>
+		</div>
+		<div class="campagne-profil-second-section">
+			<div class="campagne-profil-number-campagne">
+				<p><%=profil.participers.count%></p>
+				<p>Campagne(s)</p>
+			</div>
+			<div class="campagne-profil-money">
+				<p>250€</p>
+				<p>relevé</p>
+			</div>
+			<div class="campagne-profil-lorem">
+				<p>45</p>
+				<p>lorem ipsum</p>
+			</div>
+		</div>
+		<hr class="separateur">
+		<div class="campagne-profil-third-section">
+			<p>Mes campagnes</p>
+			<div class="campagne-profil-campagne-container">
+				<div class="owl-carousel owl-theme campagne-profil-owl">
+					<% profil.participers.each do |participer|%>
+					    <div class="item">
+					    	<img src="<%=participer.campagne.image_post_url%>">
+					    	<div class="campagne-profil-like">
+					    		<p><%= fa_icon 'heart'%></p>
+					    		<p><%= participer.like%></p>
+					    	</div>
+					    </div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		<div class="campagne-profil-fourth-section">
+			<p><%=fa_icon 'instagram'%></p>
+			<p><%=fa_icon 'facebook'%></p>
+			<p><%=fa_icon 'pinterest'%></p>
+			<p><%=fa_icon 'linkedin'%></p>
+			<p><%=fa_icon 'twitter'%></p>
+		</div>
+	<% end %>
+</div>
+<%= render 'layouts/partials/footer',current: '' %>

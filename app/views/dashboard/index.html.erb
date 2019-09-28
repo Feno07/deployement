@@ -1,0 +1,11 @@
+<%= render 'layouts/partials/header',	title: url_for()[7..url_for().length] %>
+<div class="admin-dashboard-container">
+	<div class="admin-dashboard-logout">
+		<a href="<%=admin_logout_path%>"><%= fa_icon "sign-out" %>Deconnexion</a>
+	</div>
+	<div class="admin-dashboard-empty">
+		<p>Vide</p>
+	</div>
+</div>
+
+<%= render 'layouts/partials/footer' %>

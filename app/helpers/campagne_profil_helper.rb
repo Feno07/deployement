@@ -1,0 +1,2 @@
+module CampagneProfilHelper
+end

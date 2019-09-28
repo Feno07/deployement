@@ -1,0 +1,2 @@
+module MessageAdminSelectedHelper
+end

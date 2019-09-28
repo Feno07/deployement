@@ -1,0 +1,84 @@
+<%= render 'layouts/partials/header',	title: url_for()[10..url_for().length] %>
+<% @releve.each do |releve| %>
+<div class="campagne-releve-container">
+		<div class="campagne-releve-section-first">
+			<div class="owl-carousel owl-theme campagne-releve-owl">
+				<% releve.campagnes.each do |campagne|%>
+		    		<div class="item participer-<%=campagne.id%>" >
+		    			<a href="" >
+		    				<img src="<%= campagne.image_post_url%>">
+			    			<div class="like-container">
+			    				<div class="like-number">
+			    					<p><%= fa_icon 'heart'%></p>
+			    					<% campagne.participers.each do |participer|%>
+			    						<p><%=participer.like%></p>
+			    					<% end %>
+			    				</div>
+			    			</div>
+		    			</a>
+		    			<p class="pays"><%=campagne.entreprise.pays%></p>
+		    		</div>
+		    	<% end %>
+	    	</div>
+		</div>
+		<div class="campagne-releve-section-second-container">
+			<% releve.campagnes.each do |campagne|%>
+			<div class="campagne-releve-section-second participer-<%=campagne.id%>">
+				<div class="campagne-releve-section-second-first">
+					<div class="section-image">
+						<img src="<%= campagne.image_post_url%>">
+					</div>
+					<div class="section-description">
+						<p>Description</p>
+						<p><%=campagne.entreprise.pays%><span><%= image_tag '/flag/madagascar.png'%></span></p>
+						<p><%=campagne.entreprise.ville%><</p>
+						<p><span><%= fa_icon 'circle'%></span>0</p>
+						<p>
+							<span><%= fa_icon 'star'%></span>
+							<span><%= fa_icon 'star'%></span>
+							<span><%= fa_icon 'star'%></span>
+						</p>
+						<p>date</p>
+					</div>
+				</div>
+				<div class="campagne-releve-secion-second-second">
+					<p>Réseaux Sociaux 6/6</p>
+					<div class="social-network-container">
+						<div class="facebook">
+							<p><%= fa_icon 'facebook'%></p>
+							<p>0</p>
+						</div>
+						<div class="pinterest">
+							<p><%= fa_icon 'pinterest'%></p>
+							<p>0</p>
+						</div>
+						<div class="twitter">
+							<p><%= fa_icon 'twitter'%></p>
+							<p>0</p>
+						</div>
+						<div class="linkedin">
+							<p><%= fa_icon 'linkedin'%></p>
+							<p>0</p>
+						</div>
+						<div class="instagram">
+							<p><%= fa_icon 'instagram'%></p>
+							<p>0</p>
+						</div>
+						<div class="tiktok">
+							<p><%= fa_icon 'tiktok'%></p>
+							<p>0</p>
+						</div>
+					</div>
+				</div>
+				<div class="campagne-releve-section-second-thrird">
+					<p>0€</p>
+				</div>
+			</div>
+		<% end %>
+		</div>
+		<div class="campagne-releve-section-third">
+			<p>0€</p>
+		</div>
+</div>
+<% end %>
+<%= render 'layouts/partials/footer',current: '' %>

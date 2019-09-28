@@ -1,0 +1,58 @@
+.admin-footer-container{
+	height: 10%;
+    background: #303030;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    .admin-footer-icon-container{
+    	height: 100%;
+	    display: flex;
+	    align-items: center;
+	   	position: relative;
+		div{
+			width: 80px;
+			@media screen and (min-width: 320px) and (max-width: 406px){
+				width: 60px;
+			}
+			div{
+				width: 70px;
+			    height: 70px;
+			    border-radius: 50%;
+			    display: flex;
+    			align-items: center;
+    			justify-content: center;
+    			margin: 0 auto;
+    			&:hover{
+    				position:absolute;
+    				background-color: #303030;
+    				bottom: 15px;
+    			}
+				&:hover a{
+					width: 50px;
+			    	height: 50px;
+    				position:absolute;
+    				background-color: #fff;
+    				border-bottom: 20px;
+    				i{
+    					color: #303030;
+    					font-size: 1.8em;
+    				}
+    			}
+				a{
+					width: 100%;
+				    height: 100%;
+				    display: flex;
+				    align-items: center;
+				    justify-content: center;
+				    text-decoration: none;
+				    border: 50%;
+				    border-radius: 50%;
+					i{
+						color: #fff;
+	    				font-size: 2.2em;
+					}
+				}
+			}
+		}
+    }
+}

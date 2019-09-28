@@ -1,0 +1,16 @@
+<%= render 'layouts/partials/header',	title: url_for()[10..url_for().length - 3] %>
+<div class="admin-message-selected-container">
+	<% @message_selected.each do |message| %>
+	<div class="admin-message-selected-header-container">
+		<div class="admin-message-selected-header">
+			<p>by: <span>Admin</span></p>
+			<p>to: <span><%= message.user.username %></span></p>
+			<p>at: <span><%=message.date.strftime("%d %b, %H:%M%p") %></span></p>
+		</div>
+	</div>
+	<div class="admin-message-selected-content">
+		<p><%=message.content%></p>
+	</div>
+	<% end %>
+</div>
+<%= render 'layouts/partials/footer',current: '' %>

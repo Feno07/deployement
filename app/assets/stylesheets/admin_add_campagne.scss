@@ -1,0 +1,126 @@
+// Place all the styles related to the admin_add_campagne controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #eae9ea; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #eae9ea; ; 
+}
+.admin-add-campagne-container{
+	height: 80%;
+	overflow-y: scroll;
+    background-color: #eae9ea;
+
+    .error{
+    	p{
+    		text-align: center;
+		    color: #f92424;
+		    padding: 3px 0;
+    	}
+    }
+	.admin-add-campagne-form-container{
+		height: 97%;
+		padding: 10px;
+		.admin-add-campagne-entreprise-input-container,.admin-add-campagne-responsable-input-container{
+			display: flex;
+		    flex-wrap: wrap;
+		    align-items: center;
+		    .admin-add-campagne-entreprise-input-item,.admin-add-campagne-responsable-input-item{
+		    	display: flex;
+		    	flex-direction: column;
+		    	margin: 10px 5px;
+		    	label{
+		    		color: #656565;
+		    		font-size: 0.8em;
+		    		margin-bottom: 3px;
+		    		font-style: italic;
+		    		font-weight: bold;
+		    	}
+		    	input{
+		    		border: solid 1px #c7c7c7;
+				    border-radius: 2px;
+				    font-size: 0.8em;
+				    padding: 3px;
+		    	}
+		    }
+		}
+		.admin-add-campagne-campagne-input-container{
+			display: flex;
+    		flex-direction: row;
+    		flex-wrap: wrap;
+    		.admin-add-campagne-campagne-input-item{
+    			display: flex;
+    			flex-direction: column;
+    			margin: 10px 5px;
+    			label{
+		    		font-size: 0.8em;
+		    		color: #656565;
+		    		margin-bottom: 3px;
+		    		font-style: italic;
+		    		font-weight: bold;
+		    	}
+		    	input,textarea{
+		    		border: solid 1px #c7c7c7;
+				    border-radius: 2px;
+				    font-size: 0.8em;
+				    padding: 3px;
+		    	}
+
+		    	input[type="text"]{
+		    		width: 213px;
+		    	}
+		    	textarea{
+		    		width: 250px;
+    				height: 100px;
+		    	}
+
+		    	input[type="date"]{
+		    		width: 111px;
+		    	}
+
+		    	input[type="file"]{
+		    		width: 250px;
+		    	}
+    		}
+		}
+
+	}
+	.admin-add-campagne-form-submit{
+		height: 50px;
+		position: relative;
+		input{
+			border: none;
+		    background: #3d9288;
+		    padding: 10px 20px;
+		    color: #fff;
+		    font-weight: bold;
+		    margin: 6px;
+		    box-shadow: 0 1px 4px #9e9c9c;
+		    border-radius: 5px;
+		}
+		.loader{
+			position: absolute;
+		    top: 11px;
+		    height: 28px;
+		    width: 28px;
+		    left: 50px;
+		    display: none;
+    		img{
+    			width: 100%;
+    		}
+		}
+	}
+}

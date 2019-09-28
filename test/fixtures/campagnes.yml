@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titre: MyString
+  date_debut: 2019-09-22
+  cumulable: false
+  type: 
+  status: MyString
+  brief: MyText
+  logo: MyString
+  hashtag: MyString
+  lien_clickable: MyString
+  entreprise: one
+  responsable: one
+
+two:
+  titre: MyString
+  date_debut: 2019-09-22
+  cumulable: false
+  type: 
+  status: MyString
+  brief: MyText
+  logo: MyString
+  hashtag: MyString
+  lien_clickable: MyString
+  entreprise: two
+  responsable: two

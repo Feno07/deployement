@@ -1,0 +1,166 @@
+	// Place all the styles related to the campagne_poster controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.campagne-poster-container{
+	height: 80%;
+	p{
+		font-size: 1em;
+		color: #000;
+		font-weight: bold;
+		text-align: center;
+		padding: 20px 0;
+		text-transform: capitalize;
+		span{
+			height: 20px;
+			display: inline-block;
+			width: 20px;
+			img{
+				width: 100%;
+			}
+		}
+	}
+	.campagne-poster-image-brief-container{
+		display: flex; 
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 10px;
+		.campagne-poster-image{
+			height: 201Px;
+		    width: 201px;
+		    display: flex;
+		    align-items: center;
+		  	box-shadow: 0 2px 3px #9c9c9c;
+		    padding: 8px;
+		    border-radius: 7px;
+		    margin-right: 10px;
+		    @media screen and (min-height:490px) and (max-height: 661px){
+		    	height: 142Px;
+    			width: 142px;
+		    }
+		    @media screen and (max-height: 489px){
+		    	height: 110Px;
+    			width: 110px;
+		    }
+			img{
+				width: 100%;
+			}
+		}
+
+		.campagne-poster-brief{
+			p{
+				padding:5px 0;
+				text-align: justify;
+				&:first-child{
+					font-weight:700;
+					color: #b3b3b3;
+					font-size: 1em;
+				}
+
+				&:nth-child(2){
+					font-size: 0.9em;
+					color: #484848;
+					font-weight:400;
+				}
+			}
+		}
+	}
+
+	.campagne-poster-socialNetwork{
+		margin-top: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		height: 200px;
+		@media screen and (min-height: 573px)and (max-height: 661px){
+		    height: 162Px;
+		}
+
+		@media screen and (min-height: 400px) and (max-height: 574px){
+		    height: 97px;
+		}
+		div{
+			p{
+
+				padding: 10px;
+				font-weight: 600;
+				text-align: justify;
+				label{
+					display: inline-block;
+				}
+			}
+		}
+		.social-network-left{
+			p{
+				&:first-child{
+					color: #e83b3b;
+				}
+
+				&:nth-child(2){
+					color:#000;
+				}
+				&:nth-child(3){
+					color: #2290b5;
+				}
+
+				@media screen  and (max-height: 496px){
+				    padding:5px;
+				    font-size:0.8em;
+				}
+			}
+		}
+
+		.social-network-right{
+			p{
+				&:first-child{
+					color: #075f96;
+				}
+
+				&:nth-child(2){
+					color: #ce0000;
+				}
+				&:nth-child(3){
+					color: #6ff1db;
+
+				}
+				@media screen  and (max-height: 496px){
+				    padding:5px;
+				    font-size:0.8em;
+				}
+			}
+		}
+	}
+
+	.campage-poster-button{
+		margin: 20px 0;
+	    display: flex;
+	    justify-content: space-around;
+	    align-items: center;
+	    div{
+	    	a{
+	    		padding: 10px 43px;
+			    background: #303030;
+			    color: #fff;
+			    text-decoration: none;
+			    border-radius: 5px;
+			    @media screen  and (max-height: 496px){
+				    padding: 10px 30px;
+				    font-size:0.8em;
+				}
+	    	}
+	    		input[type='submit']{
+		    		padding: 10px 43px;
+				    background: #303030;
+				    color: #fff;
+				    text-decoration: none;
+				    border-radius: 5px;
+				    border: none;
+				    @media screen  and (max-height: 496px){
+					    padding: 10px 30px;
+					    font-size:0.8em;
+					}
+		    	}
+	    	
+	    }
+	}
+}

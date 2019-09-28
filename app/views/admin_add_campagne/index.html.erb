@@ -1,0 +1,20 @@
+<%= render 'layouts/partials/header',	title: url_for()[7..url_for().length] %>
+<div class="admin-add-campagne-container">
+	<div class="error">
+		<p><%= flash[:error]%></p>
+	</div>
+	<div class="admin-add-campagne-form-container">
+	<%= form_with(url: admin_add_campagne_post_path, method: "post",multipart: true) do %>
+		<%= render 'layouts/partials/entreprise' %>
+		<%= render 'layouts/partials/responsable' %>
+		<%= render 'layouts/partials/campagne' %>
+		<div class="admin-add-campagne-form-submit">
+			<%= submit_tag("Enregistrer") %>
+			<div class="loader">
+				<%= image_tag '/loader.gif'%>
+			</div>
+		</div>
+	<% end %>
+	</div>
+</div>
+<%= render 'layouts/partials/footer' %>

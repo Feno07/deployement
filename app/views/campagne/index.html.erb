@@ -1,0 +1,48 @@
+<%= render 'layouts/partials/header',	title: url_for()[1..url_for().length] %>
+<div class="campagne-container">
+	<div class="campagne-header">
+		<div class="campagne-tri-container">
+			<div class="campagne-tri">
+				<p><span><%=fa_icon 'sort'%></span>Trier par:</p>
+			</div>
+			<div class="campagne-tri-item">
+				<p><a href="<%=sortDate_path%>"><span><%=fa_icon "calendar"%></span>Date</a></p>
+				<p><a href=""><span><%=fa_icon "sort-amount-desc"%></span>Du plus cher au moins cher</a></p>
+				<p><a href=""><span><%=fa_icon "sort-amount-asc"%></span>Du moins cher au plus cher</a></p>
+				<p><a href="<%=sortOldToCurrent_path%>"><span><%=fa_icon "outdent "%></span>Du plus ancien au moin récent</a></p>
+				<p><a href=""><span><%=fa_icon "globe"%></span>Pays</a></p>
+			</div>
+
+		</div>
+		<div class="campagne-logout">
+			<p><a href="<%= campagne_logout_path %>"><span> <%= fa_icon 'sign-out'%></span>Deconnexion</a></p>
+		</div>
+	</div>
+
+	<div class="campagne-item-container">
+		<% @campagne.each do |campagne|%>
+			<a href="<%=campagne_description_path(id:campagne.id)%>">
+				<div class="campagne-item-section">
+					<div class="campagne-item">
+						<% if campagne.logo %>
+							<%= cl_image_tag (campagne.logo)%>
+						<% else %>
+							<%= image_tag '/uploads/logo.png', alt: 'logo'%>
+						<% end %>
+					</div>
+					<div class="campagne-item">
+						<div>
+							<p><%=campagne.titre%><span><img src=""></span></p>
+							<p><%=campagne.date_debut.strftime('%d %B %Y')%></p>
+							<p><%=campagne.hashtag%></p>	
+						</div>
+					</div>
+					<div class="campagne-item">
+						<p>1500€</p>
+					</div>
+				</div>
+			</a>
+		<%end%>
+	</div>
+</div>
+<%= render 'layouts/partials/footer',current:'campagne' %>

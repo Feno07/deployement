@@ -1,0 +1,148 @@
+// Place all the styles related to the campagne_participer controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.campagne-participer-container{
+	height: 80%;
+	position: relative;
+	@media screen and (max-height: 516px){
+		overflow-y:scroll;
+	}
+	.campagne-participer-content{
+		height: 93%;
+		padding: 20px;
+		.campagne-participer-header{
+			padding: 10px 0;
+		    display: flex;
+		    justify-content: center;
+		    p{
+		    	text-transform: uppercase;
+		    	font-weight: bold;
+		    	span{
+		    		width: 20px;
+				    height: 20px;
+				    display: inline-block;
+				    margin:0 10px;
+				    img{
+				    	width: 100%;
+				    }
+		    	}
+		    }
+		}
+		.campagne-participer-section-first{
+			padding: 10px 0;
+
+			p{
+				&:first-child{
+					color: #969696;
+					padding: 5px 0;
+					font-weight: bold;
+					span{
+						margin-left: 5px;
+						padding: 5px;
+						box-shadow: 1px 0 3px #bbb9b9;
+						cursor: pointer;
+						&:hover{
+							box-shadow: 1px 0 6px #000;
+						}
+					}
+				}
+				&:nth-child(2){
+					color: #a9a9a9;
+    				padding: 5px 0;;
+				}
+			}
+		}
+		.separateur{
+			width: 200px;
+			border-color: #ececec;
+		}
+
+		.campagne-participer-section-second{
+			p{
+				color: #969696;
+				padding: 5px 0;
+				font-weight: bold;
+			}
+			.section-second-photo-container{
+				height: 140px;
+    			overflow-y: scroll;
+				display: flex;
+				justify-content: center;
+				flex-direction: row;
+				flex-wrap: wrap;
+				.photo-item{
+					width: 121px;
+				    height: 121px;
+				    margin:10px;
+				    padding: 0 20px;
+				    display: flex;
+				    align-items: center;
+				    box-shadow: 0px 2px 6px #928383;
+				    border-radius: 5px;
+				    .image-checked{
+				    	display: none;
+				    	i{
+				    		color: #58c140;
+    						font-size: 1.2em;
+				    	}
+				    }
+				    &:hover{
+				    	box-shadow: 0px 2px 4px #1f3821;
+				    }
+				    img{
+				    	width: 100%;
+				    }
+				}
+			}
+		}
+	}
+
+	.campagne-participer-boutton-container{
+		position: absolute;
+	    bottom: 18px;
+	    width: 100%;
+	    display: flex;
+	    justify-content: space-between;
+	    padding: 0 35px;
+	    .campagne-participer-boutton-post{
+	    	padding: 15px;
+		    background: #808080;
+		    border-radius: 50%;
+		    button{
+		    	background: transparent;
+		    	border: none;
+		    	pointer-events: none;
+		    	i{
+		    		color: #fff;
+		    	}
+		    }
+	    }
+
+	    .campagne-participer-boutton-photos{
+	    	input[type="file"]{
+	    		border: none;
+	    	}
+	    }
+	}
+
+
+	.modal{
+		.modal-body{
+			.modal-textarea{
+				textarea{
+					width: 100%;
+					padding: 10px;
+				}
+			}
+			input[type="submit"]{
+				border: none;
+			    padding: 10px;
+			    background: #7bc170;
+			    color: #fff;
+			    border-radius: 5px;
+			    box-shadow: 1px 2px 3px #b7b7b7;
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+<div class="admin-footer-container">
+	<div class="admin-footer-icon-container">
+		<% if !defined?(current) %>
+			<div class="admin-footer-icon-first">
+				<div class="admin-footer-icon-first-content">
+					<a href="<%= dashboard_path %>"><%= fa_icon "home"%></a>
+				</div>
+			</div>
+			<div class="admin-footer-icon-second">
+				<div class="admin-footer-icon-second-content">
+					<a href="<%= admin_campagne_path %>"><%= fa_icon "th-list"%></a>
+				</div>
+			</div>
+			<div class="admin-footer-icon-third">
+				<div class="admin-footer-icon-third-content">
+					<a href="<%= admin_message_path %>"><%= fa_icon "envelope"%></a>
+				</div>
+			</div>
+		<% else %>
+			<div class="admin-footer-icon-first">
+				<div class="admin-footer-icon-first-content">
+					<a href="<%= campagne_path %>"><%= fa_icon "home"%></a>
+				</div>
+			</div>
+			<div class="admin-footer-icon-third">
+				<div class="admin-footer-icon-third-content">
+					<a href="<%= admin_message_path %>"><%= fa_icon "heart"%></a>
+				</div>
+			</div>
+			<div class="admin-footer-icon-third">
+				<div class="admin-footer-icon-third-content">
+					<a href="<%= campagne_releve_path %>"><%= fa_icon "eur"%></a>
+				</div>
+			</div>
+			<div class="admin-footer-icon-third">
+				<div class="admin-footer-icon-third-content">
+					<a href="<%= campagne_messages_path %>"><%= fa_icon "envelope"%></a>
+				</div>
+			</div>
+			<div class="admin-footer-icon-second">
+				<div class="admin-footer-icon-second-content">
+					<a href="<%= campagne_profil_path %>"><%= fa_icon "user"%></a>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

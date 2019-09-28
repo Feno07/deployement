@@ -1,0 +1,2 @@
+module CampagnePosterHelper
+end

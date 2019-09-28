@@ -1,0 +1,81 @@
+<%= render 'layouts/partials/header',	title: url_for()[10..url_for().length - 3] %>
+<div class="campagne-description-container">
+	<% @campagne.each do |campagne|%>
+	<div class="campagne-description-content">
+		<div class="campagne-descritpion-header">
+			<div class="owl-carousel owl-theme campagne-description-carrousel">
+				<% campagne.images.each do |image| %>
+				<div class="item" ><%= cl_image_tag image.name, alt:'image'%></div> 
+				<% end %> 
+			</div>
+			<div class="campagne-description-title">
+				<div class="campagne-description-title-item">
+					<p><%= campagne.titre%></p>
+				</div>
+				<div class="campagne-description-title-item">
+					<p><%=campagne.entreprise.pays%></p>
+				</div>
+				<div class="campagne-description-title-item">
+					<p><%= image_tag '/flag/'+campagne.entreprise.pays+'.png', alt: 'logo'%></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="campagne-description-section-container">
+			<div class="campagne-description-section-first">
+				<p>Date de lancement de la campagne: <%=campagne.date_debut%></p>
+				<p>Budget: budget</p>
+				<p>Déja gagné: gagné</p>
+				<p>Reste à gagné: reste</p>
+			</div>
+			<div class="campagne-description-section-second">
+				<div class="campagne-description-section-second-first">
+					<div class="campagne-description-section-second-first-item">
+						<div class="item-title">
+							<p>Brief</p>
+							<p><%= fa_icon 'sort'%></p>
+						</div>
+						<div class="item-scroll">
+							<p><%= campagne.brief%></p>
+						</div>
+					</div>
+					<div class="campagne-description-section-second-first-item">
+						<div class="item-title">
+							<p>Tag et compte à identifié</p>
+							<p><%= fa_icon 'sort'%></p>
+						</div>
+						<div class="item-scroll">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor </p>
+						</div>
+					</div>
+					<div class="campagne-description-section-second-first-item">
+						<div class="item-title">
+							<p>Type de campagne</p>
+							<p><%= fa_icon 'sort'%></p>
+						</div>
+						<div class="item-scroll">
+							<p><%= campagne.type_campagne %></p>
+						</div>
+					</div>
+					<div class="campagne-description-section-second-first-item">
+						<div class="item-title">
+							<p>Critère et taille apprécié</p>
+							<p><%= fa_icon 'sort'%></p>
+						</div>
+						<div class="item-scroll">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="campagne-description-section-third">
+				<a href="<%= campagne_participer_path(id:campagne.id)%>"><span><%= fa_icon 'play'%></span>Participer</a>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
+
+<%= render 'layouts/partials/footer',current: '' %>
